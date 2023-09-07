@@ -90,9 +90,13 @@ const reverseString = function (x) {
 */
 
 const upperFirst = function (x) {
+  let result = [];
   const splitted = x.toString().split(" ");
-
-  return splitted;
+  for (let i = 0; i < splitted.length; i++) {
+    result +=
+      splitted[i].slice(0, 1).toUpperCase() + splitted[i].slice(1) + " ";
+  }
+  return result;
 };
 
 /* ESERCIZIO 9
@@ -110,11 +114,10 @@ const cutString = function (x) {
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-var randomNumberArray = [];
 const giveMeRandom = function (n) {
+  var randomNumberArray = [];
   for (let i = 0; i < n; i++) {
-    var randomNumberArray = Math.floor(Math.random() * 100) + 1;
-    console.log(randomNumberArray);
+    randomNumberArray.push(Math.floor(Math.random() * 11));
   }
-  // return randomNumberArray;
+  return randomNumberArray;
 };
